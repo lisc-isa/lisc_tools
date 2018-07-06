@@ -14,7 +14,7 @@ then
   git clone https://github.com/riscv/riscv-fesvr.git fesvr
   )
 fi
-if [ ! -e fesvr ]
+if [ ! -e isa-sim ]
 then
   (
   git clone https://github.com/riscv/riscv-isa-sim.git isa-sim
