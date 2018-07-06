@@ -1,29 +1,34 @@
 #! /bin/bash
 #
-# Script to build RISC-V ISA simulator, proxy kernel, and GNU toolchain.
+# Script to build LISC ISA simulator, proxy kernel, and GNU toolchain.
 
 . build.common
 
 echo "Starting LISC Toolchain build process"
 
-tar -mvzcf lisc-patch.tar.gz riscv spike_main
+cd ./patch && tar -mvzcf lisc-patch.tar.gz riscv spike_main && cd ..
 
-#cd lisc-isa-sim
-git clone https://github.com/riscv/riscv-fesvr.git
-git clone https://github.com/riscv/riscv-isa-sim.git
-cd riscv-isa-sim
+if [ ! -e fesvr ]
+then
+  (
+  git clone https://github.com/riscv/riscv-fesvr.git fesvr
+  )
+fi
+if [ ! -e fesvr ]
+then
+  (
+  git clone https://github.com/riscv/riscv-isa-sim.git isa-sim
+  )
+fi
+cd isa-sim
 git checkout -f 2dbcb01
 
-cp ../lisc-patch.tar.gz .
-
-tar -mxvf lisc-patch.tar.gz
-cp -f riscv/encoding.h ../riscv-fesvr/fesvr/encoding.h 
-rm -rf lisc-patch.tar.gz
-rm -rf ../lisc-patch.tar.gz
+tar -mxvf ../patch/lisc-patch.tar.gz
+cp -f riscv/encoding.h ../fesvr/fesvr/encoding.h 
+rm -rf ../patch/lisc-patch.tar.gz
 cd ..
 
-
-build_project riscv-fesvr --prefix=$RISCV
-build_project riscv-isa-sim --prefix=$RISCV --with-fesvr=$RISCV
+build_project fesvr --prefix=$LISC
+build_project isa-sim --prefix=$LISC --with-fesvr=$LISC
 
 echo -e "\\nlisc spike installation completed!"
