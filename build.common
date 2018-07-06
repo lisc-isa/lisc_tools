@@ -1,4 +1,4 @@
-cript to build RISC-V ISA simulator, proxy kernel, and GNU toolchain.
+# Script to build RISC-V ISA simulator, proxy kernel, and GNU toolchain.
 # Tools will be installed to $RISCV.
 
 if [ "x$RISCV" = "x" ]
