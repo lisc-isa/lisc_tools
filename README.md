@@ -1,2 +1,2 @@
-# lisc-isa-sim
-lisc指令集spike模拟器
+# lisc-tools
+lisc spike ISA simulator : pk : GNU Toolchain
