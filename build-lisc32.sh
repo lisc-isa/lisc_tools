@@ -31,7 +31,7 @@ cd ..
 build_project fesvr --prefix=$LISC
 build_project isa-sim --prefix=$LISC --with-fesvr=$LISC
 
-if [ ! -e toolchain]
+if [ ! -e toolchain ]
 then
   (
   git clone https://github.com/lisc-isa/lisc_gnu_toolchain toolchain
