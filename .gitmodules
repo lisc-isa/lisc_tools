@@ -1,3 +1,0 @@
-[submodule "toolchain"]
-	path = toolchain
-	url = https://github.com/lisc-isa/lisc_gnu_toolchain
