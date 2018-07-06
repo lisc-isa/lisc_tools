@@ -1,16 +1,16 @@
-# Script to build RISC-V ISA simulator, proxy kernel, and GNU toolchain.
-# Tools will be installed to $RISCV.
+# Script to build LISC ISA simulator, proxy kernel, and GNU toolchain.
+# Tools will be installed to $LISC.
 
-if [ "x$RISCV" = "x" ]
+if [ "x$LISC" = "x" ]
 then
-  echo "Please set the RISCV environment variable to your preferred install path."
+  echo "Please set the LISC environment variable to your preferred install path."
   exit 1
 fi
 
 # Use gmake instead of make if it exists.
 MAKE=`command -v gmake || command -v make`
 
-PATH="$RISCV/bin:$PATH"
+PATH="$LISC/bin:$PATH"
 #GCC_VERSION=`gcc -v 2>&1 | tail -1 | awk '{print $3}'`
 
 set -e
