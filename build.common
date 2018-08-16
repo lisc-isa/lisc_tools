@@ -1,4 +1,4 @@
-# Script to build LISC ISA simulator, proxy kernel, and GNU toolchain.
+# Script to build LISC ISA simulator and GNU toolchain.
 # Tools will be installed to $LISC.
 
 if [ "x$LISC" = "x" ]
