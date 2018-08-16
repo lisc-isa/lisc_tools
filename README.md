@@ -1,2 +1,2 @@
 # lisc-tools
-lisc spike ISA simulator : pk : GNU Toolchain
+LISC Spike ISA simulator and LISC GNU Toolchain
