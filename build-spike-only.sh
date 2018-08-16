@@ -1,6 +1,6 @@
 #! /bin/bash
 #
-# Script to build LISC ISA simulator, proxy kernel, and GNU toolchain.
+# Script to build LISC ISA simulator and GNU toolchain.
 
 . build.common
 
