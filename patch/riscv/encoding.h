@@ -328,7 +328,7 @@
 #define MASK_WFI  0xffffffff
 #define MATCH_URET 0x2000fb
 #define MASK_URET  0xffffffff
-#define MATCH_SRET 0x2400fb
+#define MATCH_SRET 0x2200fb
 #define MASK_SRET  0xffffffff
 #define MATCH_SFENCE_VMA 0x100200fb
 #define MASK_SFENCE_VMA  0xf00fffff
